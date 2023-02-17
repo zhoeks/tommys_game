@@ -1,11 +1,15 @@
 const strObject = (str) => {
 
-    let newObject = new Object();
+    let newObject = {};
     for (let i = 0; i < str.length; i++) {
-        newObject.str[i] = 1;
+        if (newObject.hasOwnProperty(str[i])) {
+            newObject[str[i]] += 1; 
+        } else{
+        newObject[str[i]] = 1;
+        }
     }
     return newObject;
 }
 
 
-console.log(strObject('aslwef'));
+console.log(strObject('aslasdaweweffffswefa'));
